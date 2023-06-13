@@ -4,7 +4,7 @@ from NodegraphAPI.NodegraphGlobals import GetCurrentTime
 from NodegraphAPI import Parameter
 
 
-def get_variables():
+def get_variables() -> Parameter:
     root_node = NodegraphAPI.GetRootNode()
     variables = root_node.getParameter('variables')
     return variables
