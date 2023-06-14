@@ -45,13 +45,15 @@ def get_array_variable_value(
 
 
 def set_array_variable_value(
-        variable: Union[str, Parameter], value: Union[str, float]) -> None:
+        variable: Union[str, Parameter],
+        value: Union[str, int, float]) -> None:
     value_child = get_array_variable_child(variable, 'value')
     value_child.setValue(value, GetCurrentTime())
 
 
 def append_array_variable(
-        variable: Union[str, Parameter], value: Union[str, float]) -> None:
+        variable: Union[str, Parameter],
+        value: Union[str, int, float]) -> None:
     options = get_array_variable_child(variable, 'options')
     if value in [o.getValue(GetCurrentTime()) for o in options.getChildren()]:
         return
