@@ -25,7 +25,7 @@ def create_array_variable(name: str, elements: list) -> Parameter:
     options = create_child_array('options', len(elements))
     for option_param, option_value in zip(options.getChildren(), elements):
         option_param.setValue(option_value, GetCurrentTime())
-    create_child_item('value', str(elements[0]))
+    create_child_item('value', elements[0])
     return group
 
 
